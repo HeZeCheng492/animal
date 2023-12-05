@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /animal
+    # 设置文件上传的最大限制为31MB
+    multipart:
+      max-file-size: 31MB
+      max-request-size: 31MB
+    session:
+      timeout: 3600s
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/animal?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 20001118
+
+mybatis:
+  mapper-locations: classpath:dao/*.xml
+  typeAliasesPackage: com..model.*
+  typeEnumsPackage: com.model.enums
+  configLocation: classpath:mybatis/mybatis-config.xml
+
+mybatis-plus:
+  mapper-locations: classpath:dao/*.xml
+  configuration:
+    # 如果查询结果中包含空值的列，则 MyBatis 在映射的时候，不会映射这个字段
+    # 允许在resultType="map"时映射null值
+    call-setters-on-nulls: true
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用(包括执行结果)
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    metaObjectHandler: com.config.MyMetaObjectHandler
+
+upload:
+  base-dir1: "H:/project/animal/target/classes/static/upload"
+  base-dir2: "H:/project/animal/src/main/resources/static/upload"
