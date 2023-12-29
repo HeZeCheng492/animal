@@ -14,7 +14,7 @@ spring:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/animal?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
     username: root
-    password: 20001118
+    password: 123456
 
 mybatis:
   mapper-locations: classpath:dao/*.xml
@@ -33,5 +33,5 @@ mybatis-plus:
     metaObjectHandler: com.config.MyMetaObjectHandler
 
 upload:
-  base-dir1: "H:/project/animal/target/classes/static/upload"
-  base-dir2: "H:/project/animal/src/main/resources/static/upload"
+  base-dir1: "D:/project/animal/target/classes/static/upload"
+  base-dir2: "D:/project/animal/src/main/resources/static/upload"
